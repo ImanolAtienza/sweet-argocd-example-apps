@@ -1,0 +1,18 @@
+# guestbook/templates/configmap.yaml
+#
+# Un ConfigMap simple para testear el automated sync.
+# Un ConfigMap en Kubernetes es un recurso que almacena pares clave-valor
+# de configuración, separados del código de la aplicación.
+#
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: guestbook-config          # Nombre del ConfigMap en el clúster
+  namespace: default              # Mismo namespace que la app
+  labels:
+    app: guestbook                # Label para identificar que pertenece a la app
+data:
+  # Aquí van los datos de configuración como pares clave: valor
+  environment: "lab8-testing"
+  feature-flag: "automated-sync-enabled"
+  lab-number: "8"
